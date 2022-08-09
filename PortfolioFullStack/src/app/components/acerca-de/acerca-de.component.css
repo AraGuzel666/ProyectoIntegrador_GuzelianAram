@@ -11,7 +11,7 @@
 
     font-weight: bold;
     text-align: center;
-    margin-top: 30%;
+    margin-top: 50%;
     color: #ccc;
 }
 
@@ -45,10 +45,16 @@ p{
 
 @media (max-width: 575px){
     #fotoPerfil{
-        width: 100%;
+        position: absolute; 
+        left: 100px;
+        bottom: 20px;
+
+        height: 35vh;
+        width: 35vh;
         border-radius: 100%;
         box-shadow: 3px 3px 3px black;
         margin-top: 10%;
+        
 
     }
     #nombre{
