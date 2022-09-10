@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Persona } from '../Model/persona.model';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
