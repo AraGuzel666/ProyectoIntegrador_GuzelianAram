@@ -1,14 +1,25 @@
 
-<div class="row justify-content-around fluid">
+<div class="row justify-content-around fluid" >
     <h1 class="col-12 text-center">Hard & SoftSkills</h1>
+
+    <div class="col-lg-2">
+        <button type="button" routerLink="/nuevaskill" class="btn btn-primary" *ngIf="isLogged">Nueva Skill</button>
+    </div>
+<div class="text-center circulo" *ngFor="let skill of skill">
+
     <circle-progress
-        [percent]="50"
+    
+        [percent]="(skill.porcentaje)"
         [radius]="100"
         [showSubtitle]="false"
-        [showTitle]="false"
+        [showTitle]="true"
         
-        [imageSrc]="'../assets/HTML.png'"
-        [showImage]="true"
+        [imageSrc]="''" 
+
+        [title]= "(skill.nombre)"
+        [showTitle]="true"
+
+        [showImage]="false"
         [imageHeight]="150"
         [imageWidth]="150"
         
@@ -23,119 +34,20 @@
         [animationDuration]="500"
     ></circle-progress>
 
-    <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [showSubtitle]="false"
-        [showTitle]="false"
-        
-        [imageSrc]="'../assets/CSS.png'"
-        [showImage]="true"
-        [imageHeight]="150"
-        [imageWidth]="150"
 
-        [titleColor]="'red'"
-        [titleFontSize]="'2em'"
-        [showUnits]="false"
-        [outerStrokeWidth]="15"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="500"
-    ></circle-progress>
+    <div>
+        <button *ngIf="isLogged" class="btn btn-dark m-2" routerLink="/editskill/{{skill.id}}">
+            <i class="bi bi-pencil-square m-2"></i>
+    
+          </button>
+          <button *ngIf="isLogged" class="btn btn-danger m-2" (click)="delete(skill.id)">
+          <i class="bi bi-trash3 m-2"></i>
+    
+          </button> 
 
-    <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [showSubtitle]="false"
-        [showTitle]="false"
-        
-        [imageSrc]="'../assets/JAVASCRIPT.png'"
-        [showImage]="true"
-        [imageHeight]="150"
-        [imageWidth]="150"
-
-        [titleColor]="'red'"
-        [titleFontSize]="'2em'"
-        [showUnits]="false"
-        [outerStrokeWidth]="15"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="500"
-    ></circle-progress>
     </div>
 
 
-
-
-    <div class="row justify-content-around fluid">
-    <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [showSubtitle]="false"
-        [showTitle]="false"
-        
-        [imageSrc]="'../assets/ANGULAR.png'"
-        [showImage]="true"
-        [imageHeight]="150"
-        [imageWidth]="150"
-
-        [titleColor]="'red'"
-        [titleFontSize]="'2em'"
-        [showUnits]="false"
-        [outerStrokeWidth]="15"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="500"
-    ></circle-progress>
-
-    <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [showSubtitle]="false"
-        [showTitle]="false"
-        
-        [imageSrc]="'../assets/SQL.png'"
-        [showImage]="true"
-        [imageHeight]="100"
-        [imageWidth]="150"
-
-        [titleColor]="'red'"
-        [titleFontSize]="'2em'"
-        [showUnits]="false"
-        [outerStrokeWidth]="15"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="500"
-    ></circle-progress>
-
-    <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [showSubtitle]="false"
-        [showTitle]="false"
-
-        [imageSrc]="'../assets/NODE.png'"
-        [showImage]="true"
-        [imageHeight]="150"
-        [imageWidth]="150"
-
-        [titleColor]="'red'"
-        [titleFontSize]="'2em'"
-        [showUnits]="false"
-        [outerStrokeWidth]="15"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="500"
-    ></circle-progress>
+</div>
 
 </div>
