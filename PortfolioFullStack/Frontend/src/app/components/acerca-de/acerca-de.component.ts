@@ -12,7 +12,6 @@ import { ImageService } from '../../services/image.service';
 export class AcercaDeComponent implements OnInit {
   
   persona: Persona = null;
-  imagen = this.imagenService.url;
 
   constructor(public personaService: PersonaService, private tokenService: TokenService, public imagenService: ImageService) { }
   
@@ -24,6 +23,7 @@ export class AcercaDeComponent implements OnInit {
       } else {
         this.isLogged = false;
       }
+      console.log(this.imagenService.url)
     }
 
     cargarPersona(){

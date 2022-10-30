@@ -1,15 +1,14 @@
 
-<div class="row">
+<div class="row" *ngIf="persona">
 
     <button type="button" class="btn btn-primary" routerLink="/editacercade/1" *ngIf="isLogged">
         Editar Persona
     </button>
-            <img src="{{persona.img}}" class="img-fluid" id="fotoPerfil">
-
+            <img src="https://firebasestorage.googleapis.com/v0/b/frontendaraguzel.appspot.com/o/imagen%2Fperfil_1?alt=media&token=3a7b871b-e53e-477f-b6fa-e1b389a9a73c" class="img-fluid" id="fotoPerfil">
 
 
         <div class="col-sm-12 col-md-2 col-lg-2">
-            <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
+            <p id="nombre">{{persona?.nombre}} {{persona?.apellido}}</p>
             <p id="titulo">Full Stack Developer Jr.</p>
         </div>
 
@@ -17,7 +16,7 @@
         <div class="col-sm-12 col-md-8 col-lg-8">
             <span>
                 <h1 class="acerca">Acerca de mí</h1>
-                <p>{{persona.descripcion}}</p>
+                <p>{{persona?.descripcion}}</p>
             </span>
         </div>
 
