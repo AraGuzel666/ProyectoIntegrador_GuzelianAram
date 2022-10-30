@@ -1,13 +1,15 @@
 
 <div class="row">
 
-
-            <img src="../../../assets/perfilFoto.png" class="img-fluid" id="fotoPerfil">
+    <button type="button" class="btn btn-primary" routerLink="/editacercade/1" *ngIf="isLogged">
+        Editar Persona
+    </button>
+            <img src="{{persona.img}}" class="img-fluid" id="fotoPerfil">
 
 
 
         <div class="col-sm-12 col-md-2 col-lg-2">
-            <p id="nombre">{{this.persona.nombre}} {{this.persona.apellido}}</p>
+            <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
             <p id="titulo">Full Stack Developer Jr.</p>
         </div>
 
@@ -15,12 +17,7 @@
         <div class="col-sm-12 col-md-8 col-lg-8">
             <span>
                 <h1 class="acerca">Acerca de mí</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde ipsam a, deleniti, 
-                    dolores vero itaque quibusdam quidem perspiciatis et numquam totam facere, explicabo 
-                    id recusandae possimus assumenda nesciunt omnis consequuntur.</p>
-                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde ipsam a, deleniti, 
-                    dolores vero itaque quibusdam quidem perspiciatis et numquam totam facere, explicabo 
-                    id recusandae possimus assumenda nesciunt omnis consequuntur.</p>
+                <p>{{persona.descripcion}}</p>
             </span>
         </div>
 
